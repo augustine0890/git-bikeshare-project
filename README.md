@@ -17,3 +17,7 @@ This project is a Python program designed to explore and analyze US bikeshare da
         python bikeshare.py
     ```
 4. Follow the on-screen prompts to filter data and view statistics.
+
+### Example Commands
+- When prompted, enter the city, month, and day of the week you want to analyze (e.g., "chicago", "january", "monday").
+- To view raw data, respond with "yes" when asked.
