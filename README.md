@@ -9,6 +9,10 @@ This project is a Python program designed to explore and analyze US bikeshare da
     - User statistics including user types, gender, and birth year (if available).
 - **Raw Data**: View raw data upon request, 5 rows at a time.
 
+### Prerequisites
+- Python 3.x`
+- Libraries: `pandas`, `numpy`, `time`
+
 ### Usage
 1. Clone the repository and navigate to the project directory.
 2. Ensure the required data files (`chicago.csv`, `new_york_city.csv`, `washington.csv`) are in the project directory.
