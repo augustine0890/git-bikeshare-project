@@ -211,6 +211,20 @@ def display_raw_data(df):
         else:
             print("Invalid input. Please enter 'yes' or 'no'.")
 
+def get_restart_input():
+    """
+    Asks the user whether they want to restart the program.
+
+    Returns:
+        (bool): True if the user wants to restart, False otherwise.
+    """
+    while True:
+        restart = input('\nWould you like to restart? Enter yes or no.\n').strip().lower()
+        if restart in ['yes', 'no']:
+            return restart == 'yes'
+        else:
+            print("Invalid input. Please enter 'yes' or 'no'.")
+
 def main():
     while True:
         city, month, day = get_filters()
@@ -218,23 +232,19 @@ def main():
 
         if df.empty:
             print("No data available for the given filters. Please try again.")
-            restart = input('\nWould you like to restart? Enter yes or no.\n').strip().lower()
-            if restart in ['yes', 'no']:
-                if restart == 'yes':
-                    break
-            else:
-                continue
-        
+            if not get_restart_input():
+                break
+            continue
+
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
         display_raw_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        if not get_restart_input():
             break
 
 
 if __name__ == "__main__":
-	main()
+    main()
