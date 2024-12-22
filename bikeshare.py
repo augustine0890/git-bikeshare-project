@@ -218,9 +218,10 @@ def main():
 
         if df.empty:
             print("No data available for the given filters. Please try again.")
-            restart = input('\nWould you like to restart? Enter yes or no.\n')
-            if restart.lower() != 'yes':
-                break
+            restart = input('\nWould you like to restart? Enter yes or no.\n').strip().lower()
+            if restart in ['yes', 'no']:
+                if restart == 'yes':
+                    break
             else:
                 continue
         
